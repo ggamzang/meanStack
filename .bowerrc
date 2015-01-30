@@ -1,0 +1,7 @@
+{
+	"directory": "public/lib",
+	"proxy": "http://168.219.61.252:8080",
+	"https-proxy": "http://168.219.61.252:8080",
+	"strict-ssl": false,
+	"ca":"/suwoncert.cer"
+}
