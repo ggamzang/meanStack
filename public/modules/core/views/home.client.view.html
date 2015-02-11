@@ -1,6 +1,13 @@
 <section data-ng-controller="HomeController">
     <div ng-controller="mainCtrl">
+        <div ui-view></div>
+        <a ui-sref="calculator">Calculator</a>
+        <a ui-sref="history">History</a>
+    </div>
+    <!--
+    <div ng-controller="mainCtrl">
         <calculator></calculator>
         <calhistory></calhistory>
     </div>
+    -->
 </section>

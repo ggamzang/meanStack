@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('calculator').
+angular.module('calculator', ['ui.router']).
     controller('mainCtrl', function($scope){
+
         $scope.$on("sendResult", function(e, result){
             $scope.$broadcast("sendHistory", result);
         });
@@ -27,7 +28,15 @@ angular.module('calculator').
 
     controller('bodyCtrl',function($scope) {
         // catch sendhistory Event
+        /**
+         *
+         * @type {string}
+         */
         $scope.inputExpr = "";
+        /**
+         *
+         * @param event
+         */
         $scope.btnClick = function (event) {
             var input = event.target.innerText;
             $scope.inputExpr += input;
@@ -35,7 +44,10 @@ angular.module('calculator').
 
         $scope.result = function(){
             var exp = $scope.inputExpr;
+            console.log('exp:'+exp);
             $scope.inputExpr = new String(eval($scope.inputExpr));
+            console.info('result:'+$scope.inputExpr);
+            console.trace();
             $scope.$emit("sendResult", exp + " = " + $scope.inputExpr);
         };
 
@@ -84,4 +96,19 @@ angular.module('calculator').
         $scope.$on("sendHistory", function(e, history){
             $scope.histories.push(history);
         });
+    })
+    .config(function($stateProvider){
+        $stateProvider
+            .state('index', {
+                url: ""
+            })
+            .state('calculator', {
+                url: "/calculator",
+                template: '<calculator></calculator>'
+
+            })
+            .state('history', {
+                url: "/history",
+                templateUrl: '<calhistory></calhistory>'
+            })
     });

@@ -9,6 +9,9 @@ var applicationConfiguration = require('./config/config');
 module.exports = function(config) {
 	config.set({
 		// Frameworks to use
+        // - jasmine
+        // - mocha
+        // - qunit
 		frameworks: ['jasmine'],
 
 		// List of files / patterns to load in the browser
@@ -39,7 +42,7 @@ module.exports = function(config) {
 		// - Safari (only Mac)
 		// - PhantomJS
 		// - IE (only Windows)
-		browsers: ['PhantomJS'],
+		browsers: ['Chrome'],
 
 		// If browser does not capture in given timeout [ms], kill it
 		captureTimeout: 60000,
@@ -52,9 +55,9 @@ module.exports = function(config) {
             'public/modules/**/*.html': ['ng-html2js'],
             'public/modules/**/*.js': ['coverage']
         },
-        ngHtml2JsPreprocessor:{
+        ngHtml2JsPreprocessor: {
             stripPrefix: 'public/',
-            moduleName: 'ngTemplates'   // you can name this what
+            moduleName: 'ngTemplates' //you can name this whatever you want
         }
 	});
 };
