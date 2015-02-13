@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('calculator', ['ui.router']).
+angular.module('calculator').
     controller('mainCtrl', function($scope){
 
         $scope.$on("sendResult", function(e, result){
@@ -89,7 +89,7 @@ angular.module('calculator', ['ui.router']).
     }).
 
     controller('historyCtrl', function($scope){
-        $scope.histories = [];
+        $scope.histories = ['test1', 'test2'];
         $scope.sendHistory= function(history){
             $scope.$emit("returnHistory", history);
         };
@@ -97,18 +97,15 @@ angular.module('calculator', ['ui.router']).
             $scope.histories.push(history);
         });
     })
+
     .config(function($stateProvider){
         $stateProvider
-            .state('index', {
-                url: ""
-            })
             .state('calculator', {
                 url: "/calculator",
                 template: '<calculator></calculator>'
-
             })
             .state('history', {
                 url: "/history",
-                templateUrl: '<calhistory></calhistory>'
+                template: '<calhistory></calhistory>'
             })
     });
