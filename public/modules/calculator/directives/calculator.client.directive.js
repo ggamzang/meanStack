@@ -100,12 +100,12 @@ angular.module('calculator').
 
     .config(function($stateProvider){
         $stateProvider
-            .state('calculator', {
+            .state('home.calculator', {
                 url: "/calculator",
-                template: '<calculator></calculator>'
+                template: "<calculator></calculator>"
             })
-            .state('history', {
+            .state('home.history', {
                 url: "/history",
-                template: '<calhistory></calhistory>'
+                template: "<calhistory></calhistory>"
             })
     });
