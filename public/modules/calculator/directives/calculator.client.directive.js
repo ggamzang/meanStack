@@ -89,7 +89,7 @@ angular.module('calculator').
     }).
 
     controller('historyCtrl', function($scope){
-        $scope.histories = ['test1', 'test2'];
+        $scope.histories = [];
         $scope.sendHistory= function(history){
             $scope.$emit("returnHistory", history);
         };
@@ -104,7 +104,7 @@ angular.module('calculator').
                 url: "/calculator",
                 template: "<calculator></calculator>"
             })
-            .state('home.history', {
+            .state('home.calculator.history', {
                 url: "/history",
                 template: "<calhistory></calhistory>"
             })
