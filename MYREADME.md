@@ -3,12 +3,37 @@
 * meanjs docs 읽어보기
 * restfulAPI 관련 공부( express, mongoose, $resourece, $http )
 * 집 컴퓨터에 하루패드 설치하기( [다운로드](http://pad.haroopress.com/user.html) )
+* heroku 배포 해보기
 
 ### File Architecture
 meanjs
->config
+>app : store MVC server file
+>>controllers : Express application controllers, backend business logic
 
->public
+>>models : store Mongoose models
+
+>>routes : define Express routes
+
+>> tests : store Mocha test, test backend business logic
+
+>> views : backend views
+>>> templates : backend templates
+
+>config
+>>env : 현재 환경에 따라(prd, dev .. ) config.js 에 의해 load되는 config file
+
+>>strategies : passport.js 에 의해 load되는 config file
+
+>config.js : 환경에 맞는 env 폴더 내에 config 파일을 load하는 loader
+
+>express.js : Express config file
+
+>init.js
+
+>passport.js
+
+>public : store front-end file. contains all the static file in your app.
+>>dist : distribution
 >>module
 >>>core
 >>>>config
