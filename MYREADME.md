@@ -1,5 +1,4 @@
 ### TODO
-* md file 은 뭐지? Markdown plugin?
 * state option -> abstract?
 * restfulAPI 관련 공부( express, mongoose, $resourece, $http )
 * 집 컴퓨터에 하루패드 설치하기( [다운로드](http://pad.haroopress.com/user.html) )
