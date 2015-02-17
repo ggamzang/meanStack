@@ -1,5 +1,6 @@
 ### TODO
 * state option -> abstract?
+* meanjs docs 읽어보기
 * restfulAPI 관련 공부( express, mongoose, $resourece, $http )
 * 집 컴퓨터에 하루패드 설치하기( [다운로드](http://pad.haroopress.com/user.html) )
 
