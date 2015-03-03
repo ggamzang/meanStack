@@ -89,7 +89,7 @@ angular.module('calculator').
     }).
 
     controller('historyCtrl', function($scope){
-        $scope.histories = ['test1', 'test2'];
+        $scope.histories = [];
         $scope.sendHistory= function(history){
             $scope.$emit("returnHistory", history);
         };
@@ -101,11 +101,11 @@ angular.module('calculator').
     .config(function($stateProvider){
         $stateProvider
             .state('home.calculator', {
-                url: "calculator",
-                template: '<calculator></calculator>'
+                url: "/calculator",
+                template: "<calculator></calculator>"
             })
-            .state('home.history', {
-                url: "history",
-                template: '<calhistory></calhistory>'
+            .state('home.calculator.history', {
+                url: "/history",
+                template: "<calhistory></calhistory>"
             })
     });
